@@ -17,9 +17,30 @@ class Mark extends Component {
 	constructor(props) {
 	  super(props);
 	
-	  // this.state = {};
+	  this.state = {
+      x: 0,
+      y: 0,
+    };
 	  this.animatedScale = new Animated.Value(1);
+
+    
 	}
+
+  componentWillMount() {
+    if (this.props.children) {
+
+          // console.log(this.props.children)
+          // console.log(this.props.children.props.style.width,this.props.children.props.style.height)
+          let xcenter = this.props.children.props.style.width*0.5;
+          let ycenter = this.props.children.props.style.height*0.5;
+          // alert(xcenter);
+
+          this.setState({
+            x: this.props.x - xcenter,
+            y: this.props.y - ycenter,
+          })
+      }
+  }
 
   componentWillReceiveProps(nextProps) {
     // alert(nextProps);
@@ -41,8 +62,35 @@ class Mark extends Component {
 
   render() {
   	
-  	const animateConf = {
-  			flex:1,position:'absolute', left:this.props.x, top:this.props.y,
+  	// const animateConf = {
+  	// 		flex:1,position:'absolute', left:this.state.x, top:this.state.y,
+   //          transform: [{
+   //              scale: this.animatedScale
+   //          }, 
+   //          // {
+   //          //     translateX: this.animatedPositionX
+   //          // }, {
+   //          //     translateY: this.animatedPositionY
+   //          // }
+   //          ]
+   //      }
+     //    if (this.props.children) {
+	    //     // console.log(this.props.children)
+	    //     // console.log(this.props.children.props.style.width,this.props.children.props.style.height)
+     //      let xcenter = this.props.children.props.style.width*0.5;
+     //      let ycenter = this.props.children.props.style.height*0.5;
+
+     //      this.setState({
+     //        // x: this.props.x - xcenter,
+     //        // y: this.props.y - ycenter,
+     //        x: -25
+     //      })
+	    // }
+
+     return (
+
+	    	<Animated.View style={{
+        flex:1,position:'absolute', left:this.state.x, top:this.state.y,
             transform: [{
                 scale: this.animatedScale
             }, 
@@ -52,35 +100,18 @@ class Mark extends Component {
             //     translateY: this.animatedPositionY
             // }
             ]
-        }
-        if (this.props.children) {
-	        console.log(this.props.children)
-	        console.log(this.props.children.props.style.width,this.props.children.props.style.height)
-
-	    }
-
-     return (
-
-	    	<Animated.View style={animateConf}>
+        }}>
 	    		<TouchableOpacity onPress={()=> {
 	    			if (this.props.onPress) {
 	    				this.props.onPress();
 	    				return;
 	    			}
-	    			alert('index'+this.props.width)
 	    		}}>
 	            	{this.props.children}
 	            </TouchableOpacity>
 	        </Animated.View>
     );	
 
-    return (
-    	<View style={{width: 50,height: 50,position:'absolute', left:this.props.width*50, top:0,}}>
-	    	<Animated.View style={animateConf}>
-	            <View style={{width: 50,height:50,backgroundColor:'red'}}/>
-	        </Animated.View>
-        </View>
-    );
   }
 }
 
