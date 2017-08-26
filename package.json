@@ -1,0 +1,25 @@
+{
+  "name": "react-native-image-mark-pan-zoom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sundou/react-native-image-mark-pan-zoom.git"
+  },
+  "keywords": [
+    "pan",
+    "zoom",
+    "mark",
+    "image"
+  ],
+  "author": "sundou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sundou/react-native-image-mark-pan-zoom/issues"
+  },
+  "homepage": "https://github.com/sundou/react-native-image-mark-pan-zoom#readme"
+}
