@@ -35,32 +35,31 @@ render() {
                 imageHeight={200}
             >
 
-<Image style={{width:200, height:200,}}
-source={require('./test.jpg')}
->
+                <Image style={{width:200, height:200,}}
+                    source={require('./test.jpg')}
+                >
+    
+                    <Mark x={0} y={0} 
+                        onPress={() => {
+                        this.ImageZoom.zoomIn();
+                        }}
+                    >
+                        <View style={{width:50,height:51,backgroundColor:'yellow'}}/>
+                    </Mark>
 
-<Mark x={0} y={0} 
-onPress={() => {
-this.ImageZoom.zoomIn();
-}}
->
-<View style={{width:50,height:51,backgroundColor:'yellow'}}/>
-</Mark>
+                    <Mark x={50} y={50} 
+                        onPress={() => {
+                        this.ImageZoom.zoomOut();
+                        }}
+                    >
+                        <View style={{width:50,height:51,backgroundColor:'yellow'}}/>
+                    </Mark>
 
-<Mark x={50} y={50} 
-onPress={() => {
-this.ImageZoom.zoomOut();
-}}
->
-<View style={{width:50,height:51,backgroundColor:'yellow'}}/>
-</Mark>
+                </Image>
+            </ImageZoom>
 
-</Image>
-</ImageZoom>
-
-</View>
-)
-}
+        </View>
+    )}
 }
 
 AppRegistry.registerComponent('myproject', () => ImageViewer);
