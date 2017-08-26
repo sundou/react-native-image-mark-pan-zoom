@@ -27,50 +27,50 @@ $ react-native init myproject
 ```typescript
 import React, { Component } from 'react';
 import {
-AppRegistry,
-StyleSheet,
-Text,
-View,
-Modal
+	AppRegistry,
+	StyleSheet,
+	Text,
+	View,
+	Modal
 } from 'react-native';
 
-import ImageZoom {Mark} from 'react-native-image-mark-pan-zoom';
+import {ImageZoom ,Mark} from 'react-native-image-mark-pan-zoom';
 
 class ImageViewer extends React.Component {
-render: function() {
-return (
-<View style={{flex: 1}}>
-<ImageZoom cropWidth={Dimensions.get('window').width}
-cropHeight={Dimensions.get('window').height}
-imageWidth={200}
-imageHeight={200}
-testChangeProp={this.state.testChangeProp}>
+	render: function() {
+		return (
+		<View style={{flex: 1}}>
+			<ImageZoom cropWidth={Dimensions.get('window').width}
+				cropHeight={Dimensions.get('window').height}
+				imageWidth={200}
+				imageHeight={200}
+				testChangeProp={this.state.testChangeProp}>
 
 
 
-<Image style={{width:200, height:200,}}
-source={require('./test.jpg')}>
+				<Image style={{width:200, height:200,}}
+				source={require('./test.jpg')}>
 
 
-<Mark x={0} y={0} onPress={()=>{
-alert('press first mark')
-}}>
-<View style={{width:50,height:51,backgroundColor:'yellow'}}/>
-</Mark>
+					<Mark x={0} y={0} onPress={()=>{
+						alert('press first mark')
+					}}>
+						<View style={{width:50,height:51,backgroundColor:'yellow'}}/>
+					</Mark>
 
-<Mark x={50} y={50}>
-<View style={{width:50,height:51,backgroundColor:'yellow'}}/>
-</Mark>
+					<Mark x={50} y={50}>
+						<View style={{width:50,height:51,backgroundColor:'yellow'}}/>
+					</Mark>
 
-<Mark x={0} y={100}>
-<View style={{width:50,height:51,backgroundColor:'yellow'}}/>
-</Mark>
-</Image>
-</ImageZoom>
+					<Mark x={0} y={100}>
+						<View style={{width:50,height:51,backgroundColor:'yellow'}}/>
+					</Mark>
+				</Image>
+			</ImageZoom>
 
-</View>
-)
-}
+		</View>
+		)
+	}
 }
 
 AppRegistry.registerComponent('myproject', () => ImageViewer);
