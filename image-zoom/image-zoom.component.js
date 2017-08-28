@@ -237,12 +237,12 @@ class ImageViewer extends React.Component {
                         if (this.zoomLastDistance !== null) {
                             let distanceDiff = (this.zoomCurrentDistance - this.zoomLastDistance) / 200;
                             let zoom = this.scale + distanceDiff;
-                            // if (zoom < 0.6) {
-                            //     zoom = 0.6;
-                            // }
-                            if (zoom < 1) {
-                                zoom = 1;
+                            if (zoom < 0.6) {
+                                zoom = 0.6;
                             }
+                            // if (zoom < 1) {
+                            //     zoom = 1;
+                            // }
                             if (zoom > 10) {
                                 zoom = 10;
                             }

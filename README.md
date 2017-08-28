@@ -31,6 +31,7 @@ render() {
                 ref={(r) => this.ImageZoom=r}
                 cropWidth={Dimensions.get('window').width}
                 cropHeight={Dimensions.get('window').height}
+                zoomRate={0.5}
                 imageWidth={200}
                 imageHeight={200}
             >

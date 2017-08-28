@@ -51,7 +51,14 @@ class Mark extends Component {
     console.log(DeviceEventEmitter);
     this.subscription = DeviceEventEmitter.addListener('scaleChanged', (param)=>{
         console.log('notify param:',param);
-        this.animatedScale.setValue(1.0/param.scale);
+        let scale=1;
+
+        if (param.scale >= 1) {
+          scale = 1.0/param.scale;
+        } else {
+          // scale = param.scale;
+        }
+        this.animatedScale.setValue(scale);
         // this.animatedScale.setValue(0.1);
     });
   };
