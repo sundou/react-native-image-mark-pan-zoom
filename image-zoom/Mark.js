@@ -44,13 +44,13 @@ class Mark extends Component {
 
   componentWillReceiveProps(nextProps) {
     // alert(nextProps);
-    console.log('MARK get props: ',nextProps);
+    // console.log('MARK get props: ',nextProps);
   }
 
   componentDidMount(){
-    console.log(DeviceEventEmitter);
+    // console.log(DeviceEventEmitter);
     this.subscription = DeviceEventEmitter.addListener('scaleChanged', (param)=>{
-        console.log('notify param:',param);
+        // console.log('notify param:',param);
         let scale=1;
 
         if (param.scale >= 1) {

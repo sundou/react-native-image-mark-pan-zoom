@@ -19,8 +19,8 @@ import {
   Image
 } from 'react-native';
 const isMobile = (evt, gestureState) => {
-    console.log('isMobile')
-    console.log('gesture',evt,gestureState);
+    // console.log('isMobile')
+    // console.log('gesture',evt,gestureState);
     if (react_native_1.Platform.OS === 'web') {
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }
@@ -120,7 +120,7 @@ class ImageViewer extends React.Component {
                         this.lastClickTime = new Date().getTime();
                     }
                 }
-                console.log('scale:',this.scale);
+                // console.log('scale:',this.scale);
             },
             onPanResponderMove: (evt, gestureState) => {
                 if (evt.nativeEvent.changedTouches.length <= 1) {
@@ -260,7 +260,7 @@ class ImageViewer extends React.Component {
                         this.zoomLastDistance = this.zoomCurrentDistance;
                     }
                 }
-                console.log('onMove scale：',this.scale)
+                // console.log('onMove scale：',this.scale)
             },
 
                 onPanResponderRelease: (evt, gestureState) => {
@@ -326,7 +326,7 @@ class ImageViewer extends React.Component {
                     clearTimeout(this.longPressTimeout);
                 }
 
-                console.log('release scale：',this.scale)
+                // console.log('release scale：',this.scale)
             },
         });
     }
@@ -348,7 +348,7 @@ class ImageViewer extends React.Component {
         const beforeScale = this.scale;
         this.scale = zoom;
 
-        console.log(`before sacle : ${beforeScale} zoom scale : ${this.scale} zoom : ${zoom}`);
+        // console.log(`before sacle : ${beforeScale} zoom scale : ${this.scale} zoom : ${zoom}`);
         this.animatedScale.setValue(this.scale);
         react_native_1.DeviceEventEmitter.emit('scaleChanged',{scale: this.scale});
     }
@@ -363,12 +363,12 @@ class ImageViewer extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         
-        console.log('ImageViewer get props: ',nextProps);   
+        // console.log('ImageViewer get props: ',nextProps);   
 
-        // console.log(this.props.children);
-        // react_native_1.DeviceEventEmitter.emit('scaleChanged',{width: 100});
-        console.log(react_native_1.DeviceEventEmitter);
-        console.log(react_native_1);
+        // // console.log(this.props.children);
+        // // react_native_1.DeviceEventEmitter.emit('scaleChanged',{width: 100});
+        // console.log(react_native_1.DeviceEventEmitter);
+        // console.log(react_native_1);
 
     }
     render() {
